@@ -96,7 +96,7 @@ public class Projecto {
                         mi = i;
                     }
                     JOptionPane.showMessageDialog(null, "the lowest avg is " + min + " for St. " + names[mi]);
-
+                    mi=0;
                     break;
 
              /*checked*/    case 7:
