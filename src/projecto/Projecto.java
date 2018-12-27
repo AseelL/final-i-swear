@@ -5,8 +5,9 @@ import javax.swing.JOptionPane;
 public class Projecto {
 
     public static void main(String[] args) {
+        int A = 0;
         int c = 0;
-        int[][] marks = new int[3][100];
+        int[][] marks = new int[100][3];
         int count = 0;
         int ma = 0;
         int mi = 0;
@@ -54,30 +55,45 @@ public class Projecto {
                     break;
                 case 3:
                     search = JOptionPane.showInputDialog("Please enter student's name: ");
-                    for (int i = 0; i < count; i++) 
-                        if (names[i].equals(search)) 
-                        {result += names[i] + "   " + marks[i][0] + "  " + marks[i][1] + "  " + marks[i][2] + "  " + avg[i];
-                          
-                        JOptionPane.showMessageDialog(null, result);}
-                            //we need an else here
-                        
-                        result = "";
-                        search = "";
+                    for (int i = 0; i < count; i++) {
+                        if (names[i].equals(search)) {
+                            result += names[i] + "   " + marks[i][0] + "  " + marks[i][1] + "  " + marks[i][2] + "  " + avg[i];
+                            JOptionPane.showMessageDialog(null, result);
+                            A = 1;
+                        }
+                    }
+                    if (A == 0) {
+                        JOptionPane.showMessageDialog(null, "This student doesn't exist");
+                    }
+                    A = 0;
+
+                    //we need an else here
+                    result = "";
+                    search = "";
                     break;
                 case 4:
                     search = JOptionPane.showInputDialog("Please enter student's name: ");
-                    for (int i = 0; i < count; i++) 
-                        if (names[i].equals(search)) 
-                        {result = search + " is detected on those records";
-                      JOptionPane.showMessageDialog(null, result);  }
-                            //we need an else here
-
-                        result = "";
-                        search = "";
+                    for (int i = 0; i < count; i++) {
+                        if (names[i].equals(search)) {
+                            result = search + " is detected on those records";
+                            JOptionPane.showMessageDialog(null, result);
+                            A = 1;
+                        }
+                    }
+                   if (A == 0) {
+                        JOptionPane.showMessageDialog(null, "This student doesn't exist on those records");
+                    }
+                    A = 0;
                     
+
+//we need an else here
+
+                    result = "";
+                    search = "";
+
                     break;
 
-              /*checked*/  case 5:
+                /*checked*/ case 5:
                     for (int i = 0; i < count; i++) {
                         if (avg[i] > max) {
                             max = avg[i];
@@ -88,7 +104,7 @@ public class Projecto {
                     max = 0;
                     break;
 
-               /*checked*/  case 6:
+                /*checked*/ case 6:
                     for (int i = 0; i < count; i++) {
                         if (avg[i] < min) {
                             min = avg[i];
@@ -96,10 +112,10 @@ public class Projecto {
                         mi = i;
                     }
                     JOptionPane.showMessageDialog(null, "the lowest avg is " + min + " for St. " + names[mi]);
-                    mi=0;
+                    mi = 0;
                     break;
 
-             /*checked*/    case 7:
+                /*checked*/ case 7:
                     for (int i = 0; i < count; i++) {
                         if (marks[i][2] > max) {
                             max = marks[i][2];
@@ -107,11 +123,11 @@ public class Projecto {
                     }
                     JOptionPane.showMessageDialog(null, "the highest score in Arabic subject is " + max);
                     break;
-                    
+
                 case 8:
                     c = 1;
                     break;
-              /*checked*/   default:
+                /*checked*/ default:
                     JOptionPane.showMessageDialog(null, "your choice doesn't exist, please try again ");
             }
 
