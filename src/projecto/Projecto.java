@@ -67,7 +67,6 @@ public class Projecto {
                     }
                     A = 0;
 
-                    //we need an else here
                     result = "";
                     search = "";
                     break;
@@ -80,39 +79,38 @@ public class Projecto {
                             A = 1;
                         }
                     }
-                   if (A == 0) {
+                    if (A == 0) {
                         JOptionPane.showMessageDialog(null, "This student doesn't exist on those records");
                     }
                     A = 0;
-                    
-
-//we need an else here
 
                     result = "";
                     search = "";
 
                     break;
 
-                /*checked*/ case 5:
+                case 5:
                     for (int i = 0; i < count; i++) {
                         if (avg[i] > max) {
                             max = avg[i];
+                            ma = i;
                         }
-                        ma = i;
+
                     }
                     JOptionPane.showMessageDialog(null, "the highest avg is " + max + " for St. " + names[ma]);
                     max = 0;
+                    ma = 0;
                     break;
 
-                /*checked*/ case 6:
+                case 6:
                     for (int i = 0; i < count; i++) {
                         if (avg[i] < min) {
                             min = avg[i];
+                            mi = i;
                         }
-                        mi = i;
+
                     }
                     JOptionPane.showMessageDialog(null, "the lowest avg is " + min + " for St. " + names[mi]);
-                    mi = 0;
                     break;
 
                 /*checked*/ case 7:
@@ -122,6 +120,7 @@ public class Projecto {
                         }
                     }
                     JOptionPane.showMessageDialog(null, "the highest score in Arabic subject is " + max);
+                  max=0;
                     break;
 
                 case 8:
